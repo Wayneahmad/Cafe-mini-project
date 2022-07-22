@@ -1,0 +1,7 @@
+.history
+week 2
+__pycache__
+.venv
+tests/__pycache__
+app_week2.__pycache__
+.env
