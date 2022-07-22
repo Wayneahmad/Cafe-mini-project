@@ -1,0 +1,149 @@
+# Cafe-mini-project
+Pop up Cafe CLI application
+
+# Welcome to my mini Project.
+
+The main program is run from the 'app_main.py' file.
+
+Make sure your terminal is using bash and interpreter set to use the VM
+
+## files needed to make this run include the following,
+
+```
+1. art.py
+2. data_visual.py
+3. file_manager.py
+4. .env
+5. docker-compose.yml
+6. .venv
+```
+
+Once the program starts it will prompt you to enter the main menu settings,
+You will have a selection of options to choose from.
+
+Example Below
+
+```
+- Exit
+- Products
+- Coureirs
+- Orders
+- Customers
+- Download tables
+```
+
+## NOTE
+
+Selecting the download tables will download the tables into the same directory as project.
+This will be its root
+
+# Selecting the Products / Courier / Customer menus
+
+You will be prompted similar set of options which are functions in the file_manager and are universal to all 3 menus.
+
+# Order Menus
+
+Orders menu will take you into another unique set or prompts
+
+## NOTE
+
+- If you select Data Visualization it will open a URL in your browser with a pie chart reperseting the orders
+- Each function dealing with Orders are seperate from products/couriers/customers.
+
+## LIMITATIONS!
+
+This program is no way perfect!, There is still more error handling to be done and is prone to breaking if going outside of what is expected, so please follow the inputs as described to prevent breaking!
+
+## TODO
+
+features to be added include
+
+- More error handeling accross the program
+- Unit test More functions
+- Add tracking of stock
+
+# Things to install
+
+```
+1. Docker
+1. Python
+1. Virtual enviroument
+1. Visual Studio Code
+1. librarys in requirements.txt - 'More info on this below'
+```
+
+# Setting up Docker
+
+To create a MySQL server and client, we will be using a tool called `docker`. We aren't going to go into the details of how it works in this module, however we do have an entire module dedicated to it soon after this one. For now, all you need to know is that Docker can help us install software like a database in a contained way, away from our main system.
+
+## Part 1
+
+1. Ensure you have Docker Desktop installed and running (you can check with `docker -v`).
+1. Ensure you have the `docker-setup` directory provided by your instructor.
+1. Run the following command **inside** the directory in a terminal. This will create both the client and server for us which is running on localhost.
+
+```sh
+$ docker-compose up -d
+```
+
+You should get the following output:
+
+```sh
+Creating mysql_container   ... done
+Creating adminer_container ... done
+```
+
+1. Navigate to the following URL to ensure that you can see the `Adminer` interface: http://localhost:8080/
+1. Fill in the username (`root`) and password field (`password`), leave the database field blank.
+1. Select `SQL Command` on the left.
+1. We'll create our own database with:
+
+```sql
+CREATE DATABASE test;
+```
+
+1. Select `test` in the DB dropdown on the left.
+1. Now we'll create our first table with:
+
+```sql
+CREATE TABLE person (
+  person_id INT NOT NULL AUTO_INCREMENT,
+  first_name VARCHAR(255) NOT NULL,
+  last_name VARCHAR(255) NOT NULL,
+  age INT,
+  PRIMARY KEY(person_id)
+);
+```
+
+## TO NOTE
+
+1. Make sure when you create the tables you match them to the querys in the program,
+
+# Table names should be the following.
+
+```
+ Orders /Fieldnames = OrderID, Customer_name, Address, Tel, couriers, order_status, Cart
+ Products /fieldnames = ID, Product, Price
+ Couriers /Fieldnames = CourierID, Courier, Tel
+ Customers /Fieldnames = CustomerID, Customer, Address, Tel
+ Populate the tables with your own data.
+```
+
+# Part 3
+
+1. Activate a virtual environment.
+
+- On windows make sure to download GitBash
+
+```
+  On Window, Unix or MacOS, using the bash shell: `source /path/to/venv/bin/activate`
+  On Unix or MacOS, using the csh shell: `source /path/to/venv/bin/activate.csh.`
+  On Unix or MacOS, using the fish shell: `source /path/to/venv/bin/activate.fish.`
+```
+
+1. Install the dependencies from `requirements.txt` with `pip install -r requirements.txt`.
+
+# Unit testing
+
+An example of a unit test is in the file `test_unit.py` which tests my `get_input()` function.
+To check if the test is working, run the `test_unit.py` file. If suscessfull the terminal should print `TEST HAS PASSED!`
