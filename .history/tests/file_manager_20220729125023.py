@@ -209,7 +209,7 @@ def order_inputs():
 def add_order():
     prod_inputs = order_inputs()  # Gets orders inputs
     # Runs SQL query
-    sql = f"INSERT INTO Orders (Customer_name, Address, Tel, Courier, order_status, Cart) VALUES (\'{prod_inputs[0]}\', \'{prod_inputs[1]}\', \'{prod_inputs[2]}\', \'{prod_inputs[4]}\', 'PREPARING', \'{prod_inputs[3]}\')"
+    sql = f"INSERT INTO Orders (Customer_name, Address, Tel, Couriers, order_status, Cart) VALUES (\'{prod_inputs[0]}\', \'{prod_inputs[1]}\', \'{prod_inputs[2]}\', \'{prod_inputs[4]}\', 'PREPARING', \'{prod_inputs[3]}\')"
     refresh()
     cursor.execute(sql)
     connection.commit()

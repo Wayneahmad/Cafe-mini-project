@@ -1,4 +1,5 @@
 from file_manager import *
+import plotly
 
 
 def show_status():

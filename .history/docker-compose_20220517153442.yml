@@ -2,7 +2,7 @@ version: "3.8"
 services:
   db:
     image: mysql
-    container_name: mysql_container_solo
+    container_name: mysql_container
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: "${mysql_pass}"
@@ -14,7 +14,7 @@ services:
         target: /var/lib/mysql
   adminer:
     image: adminer
-    container_name: adminer_container_solo
+    container_name: adminer_container
     restart: always
     ports:
       - 8080:8080

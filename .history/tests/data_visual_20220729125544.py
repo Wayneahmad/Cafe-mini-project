@@ -1,4 +1,5 @@
 from file_manager import *
+import matplotlib
 
 
 def show_status():
