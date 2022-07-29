@@ -1,4 +1,5 @@
 # Cafe-mini-project
+
 Pop up Cafe CLI application
 
 # Welcome to my mini Project.
@@ -16,6 +17,7 @@ Make sure your terminal is using bash and interpreter set to use the VM
 4. .env
 5. docker-compose.yml
 6. .venv
+7. Create_tables.py
 ```
 
 Once the program starts it will prompt you to enter the main menu settings,
@@ -104,6 +106,7 @@ CREATE DATABASE test;
 
 1. Select `test` in the DB dropdown on the left.
 1. Now we'll create our first table with:
+1. Run the create_tables.py
 
 ```sql
 CREATE TABLE person (
