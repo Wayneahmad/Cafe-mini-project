@@ -303,8 +303,8 @@ def ani():
 
 
 def refresh():
-    ani()
-    ani()
+    # ani()
+    # ani()
     os.system("clear")
 
 
